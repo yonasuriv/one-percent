@@ -103,7 +103,7 @@ function AppContent({
           </span>
         </div>
         <nav className="space-y-1">
-          <NavItem icon={Home} label="Dashboard" active />
+          <NavItem icon={Home} label="Home" active />
           <NavItem icon={Calendar} label="Calendar" />
           <NavItem icon={Mails} label="Messages" />
         </nav>
@@ -231,7 +231,7 @@ function AppContent({
                         </h1>
                         <p className="text-gray-400">
                           {/* {tab.label} {subTab.label} Placeholder Content */}
-                          Placeholder Content
+                          {tab.label} Placeholder Content
                         </p>
                       </div>
                     </div>

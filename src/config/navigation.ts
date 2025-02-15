@@ -1,5 +1,6 @@
 import { MainTab } from '../types/navigation';
 import { 
+  Gauge,
   BarChart3, 
   Bell, 
   FolderKanban, 
@@ -10,13 +11,19 @@ import {
 
 export const mainTabs: MainTab[] = [
   {
+    id: 'dashboard',
+    label: 'Dashboard',
+    icon: Gauge,
+    subTabs: [{ id: 'index', label: 'Home', path: '/dashboard' }]
+  },
+  {
     id: 'financial',
     label: 'Financial',
     icon: BarChart3,
     subTabs: [
-      { id: 'dashboard', label: 'Dashboard', path: '/financial/dashboard' },
+      { id: 'finances', label: 'Finances', path: '/financial/dashboard' },
       { id: 'reports', label: 'Reports', path: '/financial/reports' },
-      { id: 'analytics', label: 'Analytics', path: '/financial/analytics' }
+      { id: 'analytics', label: 'Analytics', path: '/financial/analytics' },
     ]
   },
   {
