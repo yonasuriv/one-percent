@@ -31,23 +31,13 @@ const mockChats: Chat[] = [
 
 export const ChatList: React.FC = () => {
   return (
-    <div className="h-full flex flex-col">
-      <div className="w-full p-4 flex items-center justify-end space-x-5">
-        <input
-          type="text"
-          placeholder="Search messages..."
-          className="px-4 py-2 bg-emerald-900/10 border border-emerald-900 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
-        />
-        <button className="px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors">
-          New Message
-        </button>
-      </div>
-
-      <div className="flex-1 overflow-y-auto">
+    <div className="h-full flex flex-col py-2">
+      
+      <div className="flex-1 overflow-y-auto px-6">
         {mockChats.map((chat) => (
           <div
             key={chat.id}
-            className={`p-4 flex items-center space-x-3 rounded hover:bg-emerald-800/30 rounded cursor-pointer ${
+            className={`p-4 py-6 px-6 flex items-center space-x-3 rounded-lg hover:bg-emerald-800/30 rounded cursor-pointer ${
               chat.unread ? 'bg-emerald-900/5' : ''
             }`}
           >
@@ -90,7 +80,20 @@ export const ChatList: React.FC = () => {
             </span>
           </div>
         ))}
+
       </div>
+
+      <div className="w-full p-10 flex items-center justify-end space-x-5">
+        <input
+          type="text"
+          placeholder="Search messages..."
+          className="px-4 py-2 bg-emerald-900/10 border border-emerald-900 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        />
+        <button className="px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors">
+          New Message
+        </button>
+      </div>
+
     </div>
   );
 };

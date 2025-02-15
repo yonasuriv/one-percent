@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import {
   Home,
+  Bell,
   Clock,
   Rss,
   Newspaper,
@@ -104,8 +105,10 @@ function AppContent({
         </div>
         <nav className="space-y-1">
           <NavItem icon={Home} label="Home" active />
+          <NavItem icon={Bell} label="Activity" />
           <NavItem icon={Calendar} label="Calendar" />
           <NavItem icon={Mails} label="Messages" />
+          
         </nav>
 
         <div className="mt-6 mb-2">
@@ -197,14 +200,14 @@ function AppContent({
         </div>
 
         {/* Sub Navigation - Disabled for the moment*/}
-        {/* {currentTab && (
-          <div className="px-4 py-2 border-b border-dark-border">
+        {currentTab && (
+          <div className="px-4 py-2">
             <SubTabBar
               subTabs={currentTab.subTabs}
               currentPath={location.pathname}
             />
           </div>
-        )} */}
+        )}
 
         {/* Content */}
         <div className="flex-1 overflow-hidden">

@@ -15,7 +15,7 @@ export const SubTabBar: React.FC<SubTabBarProps> = ({
   const navigate = useNavigate();
 
   return (
-    <div className="flex space-x-1 p-1 rounded-lg">
+    <div className="flex items-center space-x-2 pl-2 pr-2 rounded-lg">
       {subTabs.map((subTab) => {
         const isActive = currentPath === subTab.path;
 
@@ -24,11 +24,12 @@ export const SubTabBar: React.FC<SubTabBarProps> = ({
             key={subTab.id}
             onClick={() => navigate(subTab.path)}
             className={clsx(
-              'flex items-center px-4 py-2 rounded-md text-sm font-medium transition-all',
+              'w-full p-2 justify-between rounded-md text-sm font-medium transition-all',
+              'gap-20',
               isActive
-                ? 'bg-emerald-600/20 text-emerald-500'
-                : 'text-gray-400 hover:text-white hover:bg-emerald-800/30'
-            )}
+                ? 'bg-emerald-800/10 text-emerald-500'
+                : 'text-gray-400 hover:text-emerald-600 hover:bg-emerald-800/30'
+            )}            
           >
             {subTab.label}
           </button>

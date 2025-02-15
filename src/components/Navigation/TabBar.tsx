@@ -22,7 +22,7 @@ export const TabBar: React.FC<TabBarProps> = ({
   };
 
   return (
-    <div className="flex space-x-1 p-1 rounded-lg">
+    <div className="flex items-center px-4 py-2 rounded-md text-sm font-medium space-x-1 p-1 rounded-lg">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         const Icon = tab.icon;
@@ -32,10 +32,10 @@ export const TabBar: React.FC<TabBarProps> = ({
             key={tab.id}
             onClick={() => handleTabClick(tab)}
             className={clsx(
-              'flex items-center px-4 py-2 rounded-md text-sm font-medium transition-all',
+              'flex items-center px-4 py-3 rounded-md text-sm font-medium transition-all',
               isActive
                 ? 'bg-emerald-600/20 text-emerald-500'
-                : 'text-gray-400 hover:text-white hover:bg-emerald-800/30'
+                : 'text-gray-400 hover:text-emerald-600 hover:bg-emerald-800/30'
             )}
           >
             <Icon className="w-4 h-4 mr-2" />

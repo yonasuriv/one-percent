@@ -17,16 +17,6 @@ export const mainTabs: MainTab[] = [
     subTabs: [{ id: 'index', label: 'Home', path: '/dashboard' }]
   },
   {
-    id: 'financial',
-    label: 'Financial',
-    icon: BarChart3,
-    subTabs: [
-      { id: 'finances', label: 'Finances', path: '/financial/dashboard' },
-      { id: 'reports', label: 'Reports', path: '/financial/reports' },
-      { id: 'analytics', label: 'Analytics', path: '/financial/analytics' },
-    ]
-  },
-  {
     id: 'messages',
     label: 'Messages',
     icon: MessageSquare,
@@ -36,40 +26,19 @@ export const mainTabs: MainTab[] = [
     ]
   },
   {
-    id: 'updates',
-    label: 'Updates',
-    icon: Bell,
-    subTabs: [
-      { id: 'notifications', label: 'Notifications', path: '/updates/notifications' },
-      { id: 'alerts', label: 'Alerts', path: '/updates/alerts' }
-    ]
-  },
-  {
-    id: 'projects',
-    label: 'Projects',
-    icon: FolderKanban,
-    subTabs: [
-      { id: 'overview', label: 'Overview', path: '/projects/overview' },
-      { id: 'tasks', label: 'Tasks', path: '/projects/tasks' },
-      { id: 'timeline', label: 'Timeline', path: '/projects/timeline' }
-    ]
-  },
-  {
-    id: 'notebook',
-    label: 'Notebook',
-    icon: Book,
-    subTabs: [
-      { id: 'notes', label: 'Notes', path: '/notebook/notes' },
-      { id: 'documents', label: 'Documents', path: '/notebook/documents' }
-    ]
-  },
-  {
-    id: 'workspace',
-    label: 'Workspace',
-    icon: Layout,
+    id: 'financial',
+    label: 'Examples',
+    icon: BarChart3,
     subTabs: [
       { id: 'board', label: 'Board', path: '/workspace/board' },
-      { id: 'calendar', label: 'Calendar', path: '/workspace/calendar' },
+      { id: 'statistics', label: 'Statistics', path: '/financial/statistics' },
+      { id: 'reports', label: 'Reports', path: '/financial/reports' },
+      { id: 'analytics', label: 'Analytics', path: '/financial/analytics' },
+      { id: 'notifications', label: 'Notifications', path: '/updates/notifications' },
+      { id: 'alerts', label: 'Alerts', path: '/updates/alerts' },
+      { id: 'tasks', label: 'Tasks', path: '/projects/tasks' },
+      { id: 'timeline', label: 'Timeline', path: '/projects/timeline' },
+      { id: 'documents', label: 'Documents', path: '/notebook/documents' },
       { id: 'files', label: 'Files', path: '/workspace/files' }
     ]
   }
