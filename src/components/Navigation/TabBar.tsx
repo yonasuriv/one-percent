@@ -9,7 +9,11 @@ interface TabBarProps {
   onTabChange: (tabId: string) => void;
 }
 
-export const TabBar: React.FC<TabBarProps> = ({ tabs, activeTab, onTabChange }) => {
+export const TabBar: React.FC<TabBarProps> = ({
+  tabs,
+  activeTab,
+  onTabChange,
+}) => {
   const navigate = useNavigate();
 
   const handleTabClick = (tab: MainTab) => {
@@ -30,7 +34,7 @@ export const TabBar: React.FC<TabBarProps> = ({ tabs, activeTab, onTabChange }) 
             className={clsx(
               'flex items-center px-4 py-2 rounded-md text-sm font-medium transition-all',
               isActive
-                ? 'bg-blue-600/10 text-blue-500'
+                ? 'bg-emerald-600/10 text-emerald-500'
                 : 'text-gray-400 hover:text-white hover:bg-gray-800/30'
             )}
           >

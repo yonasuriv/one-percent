@@ -13,7 +13,7 @@ const defaultSettings: SettingsOption[] = [
     label: 'Dark Mode',
     description: 'Enable dark mode for the application',
     type: 'toggle',
-    value: true
+    value: true,
   },
   {
     id: 'notifications',
@@ -24,8 +24,8 @@ const defaultSettings: SettingsOption[] = [
     options: [
       { label: 'All', value: 'all' },
       { label: 'Important Only', value: 'important' },
-      { label: 'None', value: 'none' }
-    ]
+      { label: 'None', value: 'none' },
+    ],
   },
   {
     id: 'timeFormat',
@@ -35,17 +35,20 @@ const defaultSettings: SettingsOption[] = [
     value: '24h',
     options: [
       { label: '24-hour', value: '24h' },
-      { label: '12-hour', value: '12h' }
-    ]
-  }
+      { label: '12-hour', value: '12h' },
+    ],
+  },
 ];
 
-export const SettingsMenu: React.FC<SettingsMenuProps> = ({ isOpen, onClose }) => {
+export const SettingsMenu: React.FC<SettingsMenuProps> = ({
+  isOpen,
+  onClose,
+}) => {
   const [settings, setSettings] = useState(defaultSettings);
 
   const handleSettingChange = (id: string, newValue: any) => {
-    setSettings(prevSettings =>
-      prevSettings.map(setting =>
+    setSettings((prevSettings) =>
+      prevSettings.map((setting) =>
         setting.id === id ? { ...setting, value: newValue } : setting
       )
     );
@@ -65,7 +68,7 @@ export const SettingsMenu: React.FC<SettingsMenuProps> = ({ isOpen, onClose }) =
             <X className="w-5 h-5" />
           </button>
         </div>
-        
+
         <div className="p-4 space-y-6">
           {settings.map((setting) => (
             <div key={setting.id} className="space-y-2">
@@ -76,9 +79,11 @@ export const SettingsMenu: React.FC<SettingsMenuProps> = ({ isOpen, onClose }) =
                 </div>
                 {setting.type === 'toggle' ? (
                   <button
-                    onClick={() => handleSettingChange(setting.id, !setting.value)}
+                    onClick={() =>
+                      handleSettingChange(setting.id, !setting.value)
+                    }
                     className={`w-11 h-6 rounded-full transition-colors ${
-                      setting.value ? 'bg-blue-600' : 'bg-gray-600'
+                      setting.value ? 'bg-emerald-600' : 'bg-gray-600'
                     }`}
                   >
                     <div
@@ -91,7 +96,9 @@ export const SettingsMenu: React.FC<SettingsMenuProps> = ({ isOpen, onClose }) =
                   <select
                     className="bg-dark-card border border-dark-border rounded-md px-2 py-1 text-sm"
                     value={setting.value}
-                    onChange={(e) => handleSettingChange(setting.id, e.target.value)}
+                    onChange={(e) =>
+                      handleSettingChange(setting.id, e.target.value)
+                    }
                   >
                     {setting.options?.map((option) => (
                       <option key={option.value} value={option.value}>
@@ -112,9 +119,7 @@ export const SettingsMenu: React.FC<SettingsMenuProps> = ({ isOpen, onClose }) =
           >
             Cancel
           </button>
-          <button
-            className="px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-          >
+          <button className="px-4 py-2 text-sm font-medium bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors">
             Save Changes
           </button>
         </div>

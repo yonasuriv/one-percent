@@ -4,7 +4,8 @@ import {
   Bell, 
   FolderKanban, 
   Book, 
-  Layout 
+  Layout,
+  MessageSquare
 } from 'lucide-react';
 
 export const mainTabs: MainTab[] = [
@@ -16,6 +17,15 @@ export const mainTabs: MainTab[] = [
       { id: 'dashboard', label: 'Dashboard', path: '/financial/dashboard' },
       { id: 'reports', label: 'Reports', path: '/financial/reports' },
       { id: 'analytics', label: 'Analytics', path: '/financial/analytics' }
+    ]
+  },
+  {
+    id: 'messages',
+    label: 'Messages',
+    icon: MessageSquare,
+    subTabs: [
+      { id: 'chats', label: 'Chats', path: '/messages/chats' },
+      { id: 'contacts', label: 'Contacts', path: '/messages/contacts' }
     ]
   },
   {

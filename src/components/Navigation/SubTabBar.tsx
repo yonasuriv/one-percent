@@ -8,7 +8,10 @@ interface SubTabBarProps {
   currentPath: string;
 }
 
-export const SubTabBar: React.FC<SubTabBarProps> = ({ subTabs, currentPath }) => {
+export const SubTabBar: React.FC<SubTabBarProps> = ({
+  subTabs,
+  currentPath,
+}) => {
   const navigate = useNavigate();
 
   return (
@@ -23,7 +26,7 @@ export const SubTabBar: React.FC<SubTabBarProps> = ({ subTabs, currentPath }) =>
             className={clsx(
               'px-3 py-1.5 text-sm font-medium rounded-md transition-all',
               isActive
-                ? 'bg-blue-600/10 text-blue-500'
+                ? 'bg-emerald-600/10 text-emerald-500'
                 : 'text-gray-400 hover:text-white hover:bg-gray-800/30'
             )}
           >
