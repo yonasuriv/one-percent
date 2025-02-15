@@ -240,7 +240,12 @@ function AppContent({
 
       {/* Right Sidebar */}
       <div className="sidebar w-64 p-4">
-        <h2 className="text-sm font-medium mb-4">Team Activity</h2>
+        <div className="mt-0 mb-2">
+          <span className="text-xs font-medium text-gray-500 uppercase">
+            <h2 className="text-sm font-medium mb-4">Team Activity</h2>
+          </span>
+        </div>
+
         <div className="space-y-4">
           <TeamMember
             name="Jonathan Di Rico"
@@ -266,7 +271,13 @@ function AppContent({
           <TeamMember name="Jin Wu" role="Competitor Analysis" status="" />
         </div>
 
-        <div className="mt-8 space-y-4">
+        <div className="mt-8">
+          <span className="text-xs font-medium text-gray-500 uppercase">
+            <h2 className="text-sm font-medium mb-4">Enabled Widgets</h2>
+          </span>
+        </div>
+
+        <div className="mt-4 space-y-4">
           <StatsCard label="Total time" value="17h 48min" />
           <StatsCard label="Amount" value="$ 1.380" />
           <StatsCard label="Billable" value="17h 03min" />
@@ -326,9 +337,15 @@ const TeamMember = ({
   </div>
 );
 
+<div className="mt-0 mb-2">
+  <span className="text-xs font-medium text-gray-500 uppercase">
+    <h2 className="text-sm font-medium mb-4">Team Activity</h2>
+  </span>
+</div>;
+
 const StatsCard = ({ label, value }: { label: string; value: string }) => (
-  <div className="card p-3">
-    <div className="text-xs text-gray-400">{label}</div>
+  <div className="card p-2">
+    <div className="text-xs text-gray-400 uppercase mt-0 mb-2">{label}</div>
     <div className="text-sm font-medium mt-1">{value}</div>
   </div>
 );
