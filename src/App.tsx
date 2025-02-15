@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Logo from '/src/assets/images/logo.png';
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,6 +28,7 @@ import {
   Settings,
   BrainCircuit,
 } from 'lucide-react';
+import { LogIn } from 'lucide-react';
 import { TabBar } from './components/Navigation/TabBar';
 import { SubTabBar } from './components/Navigation/SubTabBar';
 import { SettingsMenu } from './components/Settings/SettingsMenu';
@@ -87,11 +89,12 @@ function AppContent({
     <div className="flex h-screen">
       {/* Sidebar */}
       <div className="sidebar w-56 p-4 flex flex-col">
-        <div className="flex items-center space-x-2 mb-8">
-          <div className="w-8 h-8 bg-emerald-600 rounded flex items-center justify-center">
+        <div className="flex items-center mb-4 p-4 ml-8">
+          {/* <div className="w-8 h-8 bg-emerald-600 rounded flex items-center justify-center">
             <span className="text-white font-bold">1%</span>
           </div>
-          <span className="text-white font-semibold">ONE %</span>
+          <span className="text-white font-semibold">ONE %</span> */}
+          <img src={Logo} alt="My Image" width={100} />
         </div>
 
         <div className="mt-0 mb-2">
@@ -176,7 +179,8 @@ function AppContent({
       {/* Main Content */}
       <div className="main-content flex-1 flex flex-col">
         {/* Header */}
-        <div className="p-4 border-b border-dark-border flex items-center justify-between">
+        {/* <div className="p-4 border-b border-dark-border flex items-center justify-between"> */}
+        <div className="p-4 flex items-center justify-between">
           <div className="flex-1">
             <TabBar
               tabs={mainTabs}
@@ -192,15 +196,15 @@ function AppContent({
           </div>
         </div>
 
-        {/* Sub Navigation */}
-        {currentTab && (
+        {/* Sub Navigation - Disabled for the moment*/}
+        {/* {currentTab && (
           <div className="px-4 py-2 border-b border-dark-border">
             <SubTabBar
               subTabs={currentTab.subTabs}
               currentPath={location.pathname}
             />
           </div>
-        )}
+        )} */}
 
         {/* Content */}
         <div className="flex-1 overflow-hidden">
@@ -226,7 +230,8 @@ function AppContent({
                           {subTab.label}
                         </h1>
                         <p className="text-gray-400">
-                          Content for {tab.label} - {subTab.label}
+                          {/* {tab.label} {subTab.label} Placeholder Content */}
+                          Placeholder Content
                         </p>
                       </div>
                     </div>
@@ -240,6 +245,17 @@ function AppContent({
 
       {/* Right Sidebar */}
       <div className="sidebar w-64 p-4">
+        <div className="ml-24 space-x-3 mt-0 mb-6 space-x-3">
+          <button className="flex items-center px-4 py-2 text-white rounded-md hover:bg-emerald-700 transition-colors">
+            <img
+              src="https://netlify.com/favicon.ico"
+              alt="Sign In"
+              className="w-4 h-4 ml-2 mr-4"
+            />
+            Sign in
+          </button>
+        </div>
+
         <div className="mt-0 mb-2">
           <span className="text-xs font-medium text-gray-500 uppercase">
             <h2 className="text-sm font-medium mb-4">Team Activity</h2>
@@ -306,7 +322,7 @@ const NavItem = ({
     className={`flex items-center space-x-3 px-3 py-2 rounded-md cursor-pointer ${
       active
         ? 'bg-emerald-600/10 text-emerald-500'
-        : 'text-gray-400 hover:bg-gray-800/30'
+        : 'text-gray-400 hover:bg-emerald-800/30'
     }`}
   >
     <Icon className="w-5 h-5" />

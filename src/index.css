@@ -5,10 +5,11 @@
 :root {
   /* Active */
   --main-content-bg: #010201;
-  --card-bg: #000000; /* Active */
-  --card-border: #072e0c; /* Active */
-  --sidebar-bg: #010201; /* Active */
-  --text-primary: #ffffff; /* Active */
+  --card-bg: #020e04;
+  --card-border: #072e0c;
+  --sidebar-bg: #010201;
+  --text-primary: #ffffff;
+  --fields-bg: #06110c;
 
   /* Inactive (missing) */
   --main-content: #1ce426;
@@ -16,6 +17,7 @@
   --text-secondary: #ff0000;
   --border-color: #2cdd14;
   --accent-color: #ee00ce;
+  --bg-dark-card: #ff0000;
 
   /* Testing */
   --debug: #ff0000;
