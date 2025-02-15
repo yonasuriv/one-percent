@@ -36,7 +36,7 @@ export const ChatList: React.FC = () => {
         <input
           type="text"
           placeholder="Search messages..."
-          className="w-full px-4 py-2 bg-dark-card border border-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="w-full px-4 py-2 bg-emerald-900/10 border border-emerald-900 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
         />
       </div>
 
@@ -44,8 +44,8 @@ export const ChatList: React.FC = () => {
         {mockChats.map((chat) => (
           <div
             key={chat.id}
-            className={`p-4 flex items-center space-x-3 hover:bg-gray-800/30 cursor-pointer ${
-              chat.unread ? 'bg-emerald-600/5' : ''
+            className={`p-4 flex items-center space-x-3 hover:bg-emerald-800/30 cursor-pointer ${
+              chat.unread ? 'bg-emerald-900/5' : ''
             }`}
           >
             <div className="relative">
@@ -65,19 +65,26 @@ export const ChatList: React.FC = () => {
               )}
             </div>
 
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-2">
               <div className="flex items-center justify-between">
-                <span className="font-medium truncate">{chat.user.name}</span>
-                <span className="text-xs text-gray-400">{chat.timestamp}</span>
+                <span className="flex items-center justify-between font-medium truncate">
+                  {chat.user.name}
+                  {chat.unread && (
+                    <span className="text-xs text-[#05a89b] px-2">
+                      <p>UNREAD</p>
+                    </span>
+                  )}
+                </span>
               </div>
-              <p className="text-sm text-gray-400 truncate">
+
+              <p className="text-sm text-gray-400 truncate py-1">
                 {chat.lastMessage}
               </p>
             </div>
 
-            {chat.unread && (
-              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-            )}
+            <span className="grid text-xs text-gray-400 h-2">
+              {chat.timestamp}
+            </span>
           </div>
         ))}
       </div>
